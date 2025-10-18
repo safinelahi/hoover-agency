@@ -1,0 +1,23 @@
+[
+  {
+    "rating": 5,
+    "comment": "I want connection and to genuinely feel I'm showing up for people...",
+    "image": "/src/assets/images/person01.svg",
+    "name": "Mackenzio Child",
+    "position": "Founder @ BA"
+  },
+  {
+    "rating": 4,
+    "comment": "Amazing experience! Highly recommended!",
+    "image": "/src/assets/images/person01.svg",
+    "name": "John Doe",
+    "position": "Product Designer"
+  },
+  {
+    "rating": 5,
+    "comment": "Outstanding support and beautiful UI.",
+    "image": "/src/assets/images/person01.svg",
+    "name": "Sarah Johnson",
+    "position": "CEO, Creative Labs"
+  }
+]

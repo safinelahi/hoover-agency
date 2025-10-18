@@ -1,7 +1,8 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import BottomCarouselItems from "./components/BottomCarousel/BottomCarouselItems";
-import UpperCarouselItems from "./components/UpperCarousel/UpperCarouselItems"; // ✅ use this instead of UpperCarousel
+import UpperCarouselItems from "./components/UpperCarousel/UpperCarouselItems"; 
+import ReviewCarousel from "./components/ReviewCarousel/ReviewCarousel";
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <NavBar />
       <main>
         <BottomCarouselItems />
-        <UpperCarouselItems /> 
+        <UpperCarouselItems />
+        <ReviewCarousel/>
       </main>
     </>
   );
