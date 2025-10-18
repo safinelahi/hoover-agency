@@ -108,7 +108,7 @@ function ReviewCarousel() {
               </div>
 
               {/* Comment */}
-              <p className="text-xs sm:text-sm md:text-base text-gray-700 mb-3 sm:mb-4 leading-relaxed w-100">
+              <p className="text-xs sm:text-sm md:text-base text-gray-700 mb-3 sm:mb-4 leading-relaxed">
                 {review.comment}
               </p>
 
