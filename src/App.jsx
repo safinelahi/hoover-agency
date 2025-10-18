@@ -1,8 +1,9 @@
 import "./App.css";
-import NavBar from "./components/NavBar/NavBar";
 import BottomCarouselItems from "./components/BottomCarousel/BottomCarouselItems";
-import UpperCarouselItems from "./components/UpperCarousel/UpperCarouselItems"; 
+import NavBar from "./components/NavBar/NavBar";
+import ComparisonSection from "./components/Pages/ComparisonSection";
 import ReviewCarousel from "./components/ReviewCarousel/ReviewCarousel";
+import UpperCarouselItems from "./components/UpperCarousel/UpperCarouselItems";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <BottomCarouselItems />
         <UpperCarouselItems />
         <ReviewCarousel/>
+        <ComparisonSection/>
       </main>
     </>
   );
