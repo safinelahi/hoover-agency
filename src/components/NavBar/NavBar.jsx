@@ -7,46 +7,39 @@ import logoImage from "../../assets/logos/hoover.png";
 function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Motion variants for mobile menu
+  const mobileMenuVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    exit: { opacity: 0, y: -50, transition: { duration: 0.3, ease: "easeIn" } },
+  };
+
   return (
-    <header className="w-full flex justify-center py-4 bg-white">
-      <div className="w-[85%] max-w-[900px]  bg-[#0047FF] text-white rounded-2xl flex items-center justify-between px-6 py-3">
+    <header className="w-full flex justify-center py-4 bg-white relative z-50">
+      <div className="w-[85%] max-w-[900px] bg-[#0047FF] text-white rounded-2xl flex items-center justify-between px-6 py-3">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <img
-            src={logoImage}
-            alt="Logo"
-            className="h-14 w-auto object-contain"
-          />
+          <img src={logoImage} alt="Logo" className="h-14 w-auto object-contain" />
         </div>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-8 text-base font-medium">
-          <Link to="/" className=" text-[#FDFDFD] text-base font-normal ">
+          <Link to="/" className="text-[#FDFDFD] text-base font-normal">
             Projects
           </Link>
-          <Link
-            to="/services"
-            className=" text-[#FDFDFD] text-base font-normal "
-          >
+          <Link to="/services" className="text-[#FDFDFD] text-base font-normal">
             Services
           </Link>
-          <Link
-            to="/custom-template"
-            className=" text-[#FDFDFD] text-base font-normal "
-          >
+          <Link to="/custom-template" className="text-[#FDFDFD] text-base font-normal">
             Custom Template
           </Link>
 
-          <button className="flex items-center gap-3.5 text-[#FDFDFD] font-semibold ">
+          <button className="flex items-center gap-3.5 text-[#FDFDFD] font-semibold">
             Book a Quick Call
             <motion.span
               className="bg-black text-white flex items-center justify-center rounded-lg h-10 w-10"
               animate={{ scale: [1, 1.15, 1] }}
-              transition={{
-                duration: 2.5,
-                ease: "easeInOut",
-                repeat: Infinity,
-              }}
+              transition={{ duration: 2.5, ease: "easeInOut", repeat: Infinity }}
             >
               <FiArrowUpRight size={22} />
             </motion.span>
@@ -54,27 +47,27 @@ function NavBar() {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-white text-2xl"
-        >
+        <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-white text-2xl">
           {menuOpen ? <FiX /> : <FiMenu />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu with Motion */}
       {menuOpen && (
-        <div className="absolute top-[83px] left-1/2 -translate-x-1/2 w-[85%] bg-[#0047FF] text-white flex flex-col items-center gap-4 py-6 rounded-b-2xl md:hidden">
+        <motion.div
+          className="absolute top-full left-1/2 -translate-x-1/2 w-[100%] bg-[#0047FF] text-white flex flex-col items-center gap-4 py-6 md:hidden shadow-lg z-40"
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={mobileMenuVariants}
+        >
           <Link to="/" className="text-[#FDFDFD] text-base font-normal">
             Projects
           </Link>
           <Link to="/services" className="text-[#FDFDFD] text-base font-normal">
             Services
           </Link>
-          <Link
-            to="/custom-template"
-            className="text-[#FDFDFD] text-base font-normal"
-          >
+          <Link to="/custom-template" className="text-[#FDFDFD] text-base font-normal">
             Custom Template
           </Link>
 
@@ -83,16 +76,12 @@ function NavBar() {
             <motion.span
               className="bg-black text-white flex items-center justify-center rounded-lg h-10 w-10"
               animate={{ scale: [1, 1.15, 1] }}
-              transition={{
-                duration: 2.5,
-                ease: "easeInOut",
-                repeat: Infinity,
-              }}
+              transition={{ duration: 2.5, ease: "easeInOut", repeat: Infinity }}
             >
               <FiArrowUpRight size={22} />
             </motion.span>
           </button>
-        </div>
+        </motion.div>
       )}
     </header>
   );

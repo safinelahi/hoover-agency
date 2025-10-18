@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 
 const UpperCarousel = ({ firstImages = [] }) => {
   return (
-    <div className="container flex mx-auto gap-5 overflow-hidden bg-black py-3 h-[512px] relative my-[100px]">
+    <div className="container flex mx-auto gap-5 overflow-hidden bg-black py-3 md:h-[512px] h-[300px]
+     relative my-[100px]">
       {/* First vertical column */}
       <div className="relative flex flex-col overflow-hidden h-full">
         <motion.div
