@@ -8,11 +8,12 @@ const ClientBrief = () => {
   return (
     <div className="px-4 sm:px-6 lg:px-12 py-10">
       {/*  Heading Section  */}
-      <div>
-        <h1 className="text-[#363636] text-[26px] sm:text-[36px] md:text-[48px] lg:text-[54px] font-bold max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-[80%] mx-auto text-center leading-tight">
+      <div className="flex flex-col justify-center items-center" >
+        <h1 className="text-[#363636] text-center text-3xl sm:text-4xl md:text-5xl font-bold  md:w-[40%]">
           From Client Brief to Live Site Your White-Label Process
         </h1>
-        <p className="text-black text-sm sm:text-base md:text-lg lg:text-xl font-medium max-w-full sm:max-w-md md:max-w-2xl lg:max-w-[60%] mx-auto text-center leading-relaxed mt-4 mb-6">
+        <p className="text-black text-sm sm:text-base md:text-lg lg:text-xl font-medium max-w-full sm:max-w-[40%]
+         md:max-w-[40%] lg:max-w-[40%] mx-auto text-center leading-relaxed mt-4 mb-6">
           We know that a great partnership starts with a clear plan. Our process
           is designed to be seamless, letting you stay in control while we
           handle the work, completely behind the scenes.
@@ -20,7 +21,7 @@ const ClientBrief = () => {
       </div>
 
       {/*  Process Cards  */}
-      <div className="container mx-auto py-10">
+      <div className="container md:mx-auto py-10 px-4 md:px-0 ">
         <div
           className="
             grid 
@@ -40,7 +41,7 @@ const ClientBrief = () => {
               alt="Strategy Icon"
             />
             <h1 className="font-bold text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px]">
-              You Lead <br /> We Plan
+              You Lead <br className=" hidden md:block" /> We Plan
             </h1>
             <p className="text-sm sm:text-base md:text-lg">
               You bring the client's vision. We create the blueprint, ensuring a
@@ -56,7 +57,7 @@ const ClientBrief = () => {
               alt="Development Icon"
             />
             <h1 className="font-bold text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px]">
-              We Build <br /> You Brand
+              We Build <br className=" hidden md:block" /> You Brand
             </h1>
             <p className="text-sm sm:text-base md:text-lg">
               You bring the client's vision. We create the blueprint, ensuring a
@@ -72,7 +73,7 @@ const ClientBrief = () => {
               alt="Launch Icon"
             />
             <h1 className="font-bold text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px]">
-              We Launch <br /> You Shine
+              We Launch <br className=" hidden md:block" /> You Shine
             </h1>
             <p className="text-sm sm:text-base md:text-lg">
               You bring the client's vision. We create the blueprint, ensuring a
@@ -88,7 +89,7 @@ const ClientBrief = () => {
               alt="Support Icon"
             />
             <h1 className="font-bold text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px]">
-              We Maintain <br /> You Grow
+              We Maintain <br className=" hidden md:block" /> You Grow
             </h1>
             <p className="text-sm sm:text-base md:text-lg">
               We manage all the maintenance, freeing you up to focus on what you

@@ -18,15 +18,18 @@ function App() {
       <NavBar />
       <main>
         <Hero/>
-        <BottomCarouselItems />
+        
         <UpperCarouselItems />
         <AgencyGrowth/>
         <ReviewCarousel/>
         <ComparisonSection/>
         <ComparisonSection2/>
-        <FAQSection/>
-        <CtaSection/>
+        
         <ClientBrief/>
+        <FAQSection/>
+        <BottomCarouselItems />
+        <CtaSection/>
+        
         <Footer/>
       </main>
     </>

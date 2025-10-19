@@ -48,7 +48,7 @@ const FAQSection = () => {
   return (
     <div className="container mx-auto py-20 px-6 flex flex-col justify-center items-center">
       {/* Heading */}
-      <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold mb-24 md:w-[75%]   ">
+      <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold mb-24 md:w-[50%]   ">
         We've gathered answers to some of the most common questions  we get.
       </h2>
 
