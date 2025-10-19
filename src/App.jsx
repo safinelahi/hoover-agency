@@ -1,6 +1,8 @@
 import "./App.css";
 import BottomCarouselItems from "./components/BottomCarousel/BottomCarouselItems";
 import NavBar from "./components/NavBar/NavBar";
+import AgencyGrowth from "./components/Pages/AgencyGrowth";
+import ClientBrief from "./components/Pages/ClientBrief";
 import ComparisonSection from "./components/Pages/ComparisonSection";
 import ComparisonSection2 from "./components/Pages/ComparisonSection2";
 import CtaSection from "./components/Pages/CtaSection";
@@ -18,11 +20,13 @@ function App() {
         <Hero/>
         <BottomCarouselItems />
         <UpperCarouselItems />
+        <AgencyGrowth/>
         <ReviewCarousel/>
         <ComparisonSection/>
         <ComparisonSection2/>
         <FAQSection/>
         <CtaSection/>
+        <ClientBrief/>
         <Footer/>
       </main>
     </>
