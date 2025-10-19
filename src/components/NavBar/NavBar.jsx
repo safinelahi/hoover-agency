@@ -16,7 +16,7 @@ function NavBar() {
 
   return (
     <header className="w-full flex justify-center py-4 bg-white relative z-50">
-      <div className="w-[85%] max-w-[900px] bg-[#0047FF] text-white rounded-2xl flex items-center justify-between px-6 py-3">
+      <div className="w-[85%] max-w-[780px] bg-[#0047FF] text-white rounded-2xl flex items-center justify-between px-6 py-3">
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img src={logoImage} alt="Logo" className="h-14 w-auto object-contain" />
