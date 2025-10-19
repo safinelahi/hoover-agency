@@ -47,7 +47,7 @@ const ComparisonSection2 = () => {
               <div className="w-8 h-8 bg-black rounded-md flex items-center justify-center mr-4">
                 <span className="text-white text-xl font-bold">−</span>
               </div>
-              <p className="text-black text-[22px] font-semibold">{text}</p>
+              <p className="text-black md:text-[22px] text-[18px] font-semibold  ">{text}</p>
             </div>
           ))}
         </div>
@@ -64,7 +64,7 @@ const ComparisonSection2 = () => {
               <div className="w-8 h-8 bg-[#0830EA] rounded-md flex items-center justify-center mr-4">
                 <span className="text-white text-xl font-bold">+</span>
               </div>
-              <p className="text-black text-[22px] font-semibold">{text}</p>
+              <p className="text-black md:text-[22px] text-[18px] font-semibold">{text}</p>
             </div>
           ))}
         </div>

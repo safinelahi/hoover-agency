@@ -16,10 +16,10 @@ function NavBar() {
 
   return (
     <header className="w-full flex justify-center py-4 bg-white relative z-50">
-      <div className="w-[85%] max-w-[780px] bg-[#0047FF] text-white rounded-2xl flex items-center justify-between px-6 py-3">
+      <div className="md:w-[85%] w-[70%] max-w-[780px] bg-[#0047FF] text-white rounded-2xl flex items-center justify-between px-6 py-3">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <img src={logoImage} alt="Logo" className="h-14 w-auto object-contain" />
+          <img src={logoImage} alt="Logo" className="md:h-14 md:w-auto h-9 object-contain" />
         </div>
 
         {/* Desktop Menu */}
@@ -55,7 +55,8 @@ function NavBar() {
       {/* Mobile Menu with Motion */}
       {menuOpen && (
         <motion.div
-          className="absolute top-full left-1/2 -translate-x-1/2 w-[100%] bg-[#0047FF] text-white flex flex-col items-center gap-4 py-6 md:hidden shadow-lg z-40"
+          className="absolute top-full  w-[100%] bg-[#0047FF] text-white flex flex-col items-center gap-4 py-6 
+          md:hidden shadow-lg z-40"
           initial="hidden"
           animate="visible"
           exit="exit"
