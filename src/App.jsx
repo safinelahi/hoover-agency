@@ -1,5 +1,6 @@
 import "./App.css";
 import BottomCarouselItems from "./components/BottomCarousel/BottomCarouselItems";
+import HowWeHelp from "./components/HowWeHelp/HowWeHelp";
 import NavBar from "./components/NavBar/NavBar";
 import AgencyGrowth from "./components/Pages/AgencyGrowth";
 import ClientBrief from "./components/Pages/ClientBrief";
@@ -24,7 +25,7 @@ function App() {
         <ReviewCarousel/>
         <ComparisonSection/>
         <ComparisonSection2/>
-        
+        <HowWeHelp />
         <ClientBrief/>
         <FAQSection/>
         <BottomCarouselItems />
