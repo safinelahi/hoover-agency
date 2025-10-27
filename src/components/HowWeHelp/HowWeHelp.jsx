@@ -60,15 +60,23 @@ export default function HowWeHelp() {
   ];
 
   return (
-    <section className="bg-[#F3F3F3]">
-       <div className="text-black flex justify-center pt-[100px] ">
+    <section className="bg-[#F3F3F3] overflow-x-hidden">
+      {/* Title Section */}
+      <div className="text-black flex justify-center pt-[100px]">
         <div className="flex flex-col justify-center items-center w-[794px]">
-<h1 className="text-[54px] text-center">Skip the Stress, Scale Faster. <br />Here’s How We Help.</h1>
-          <p className="text-center text-[18px] w-[675px]">Take on more projects, skip the stress, and scale faster with a team that’s always got your back.</p>
+          <h1 className="text-[54px] text-center leading-tight">
+            <span className="font-[OpenSauceSans] font-bold">Skip the </span>
+            <span className="font-[OpenSauceSans] font-regular italic">Stress, Scale Faster. </span><br />
+            
+            <span className="font-[OpenSauceSans] font-bold">Here’s How We Help.</span> 
+          </h1>
+          <p className="text-center text-[18px] w-[675px] mt-4">
+            Take on more projects, skip the stress, and scale faster with a team that’s always got your back.
+          </p>
         </div>
-          
-       </div>
-     
+      </div>
+
+      {/* Horizontal Scroll Section */}
       <section
         ref={sectionRef}
         className="relative overflow-hidden h-screen flex items-center"
@@ -80,7 +88,6 @@ export default function HowWeHelp() {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width=""
             height="100"
             viewBox="0 0 79 67"
             fill="none"
