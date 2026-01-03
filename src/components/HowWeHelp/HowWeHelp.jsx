@@ -9,26 +9,33 @@ export default function HowWeHelp() {
   const innerRef = useRef(null);
 
   useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      const container = innerRef.current;
-      const cards = container.children;
-      const cardWidth = 528 + 32;
-      const totalCards = cards.length;
-      const totalScroll = cardWidth * (totalCards - 1);
+    const mm = gsap.matchMedia();
 
-      gsap.to(container, {
-        x: -totalScroll,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          pin: true,
-          scrub: 1,
-          end: () => `+=${totalScroll}`,
-        },
-      });
-    }, sectionRef);
+    // Desktop only animation
+    mm.add("(min-width: 1024px)", () => {
+      const ctx = gsap.context(() => {
+        const container = innerRef.current;
+        const cards = container.children;
+        const cardWidth = 528 + 32;
+        const totalCards = cards.length;
+        const totalScroll = cardWidth * (totalCards - 1);
 
-    return () => ctx.revert();
+        gsap.to(container, {
+          x: -totalScroll,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            pin: true,
+            scrub: 1,
+            end: () => `+=${totalScroll}`,
+          },
+        });
+      }, sectionRef);
+
+      return () => ctx.revert();
+    });
+
+    return () => mm.revert();
   }, []);
 
   const cardsData = [
@@ -62,16 +69,21 @@ export default function HowWeHelp() {
   return (
     <section className="bg-[#F3F3F3] overflow-x-hidden">
       {/* Title Section */}
-      <div className="text-black flex justify-center pt-[100px]">
-        <div className="flex flex-col justify-center items-center w-[794px]">
-          <h1 className="text-[54px] text-center leading-tight">
+      <div className="text-black flex justify-center pt-[100px] px-4">
+        <div className="flex flex-col justify-center items-center max-w-[794px]">
+          <h1 className="text-[36px] lg:text-[54px] text-center leading-tight">
             <span className="font-[OpenSauceSans] font-bold">Skip the </span>
-            <span className="font-[OpenSauceSans] font-regular italic">Stress, Scale Faster. </span><br />
-            
-            <span className="font-[OpenSauceSans] font-bold">Here’s How We Help.</span> 
+            <span className="font-[OpenSauceSans] italic">
+              Stress, Scale Faster.
+            </span>
+            <br />
+            <span className="font-[OpenSauceSans] font-bold">
+              Here’s How We Help.
+            </span>
           </h1>
-          <p className="text-center text-[18px] w-[675px] mt-4">
-            Take on more projects, skip the stress, and scale faster with a team that’s always got your back.
+          <p className="text-center text-[16px] lg:text-[18px] max-w-[675px] mt-4">
+            Take on more projects, skip the stress, and scale faster with a team
+            that’s always got your back.
           </p>
         </div>
       </div>
@@ -79,11 +91,11 @@ export default function HowWeHelp() {
       {/* Horizontal Scroll Section */}
       <section
         ref={sectionRef}
-        className="relative overflow-hidden h-screen flex items-center"
+        className="relative overflow-hidden min-h-screen lg:h-screen flex items-center"
       >
-        {/* Fixed Arrow */}
+        {/* Arrow (hidden on mobile) */}
         <div
-          className="absolute left-0 top-0 h-full flex items-center justify-center px-4"
+          className="absolute left-0 top-0 h-full hidden lg:flex items-center justify-center px-4"
           style={{ width: "120px", backgroundColor: "#F3F3F3", zIndex: 10 }}
         >
           <svg
@@ -101,28 +113,28 @@ export default function HowWeHelp() {
         </div>
 
         {/* Cards */}
-        <div ref={innerRef} className="flex gap-8 pl-32">
+        <div
+          ref={innerRef}
+          className="flex gap-8 pl-4 lg:pl-32 flex-col lg:flex-row"
+        >
           {cardsData.map((card, i) => (
             <div
               key={i}
-              className="flex-shrink-0"
+              className="flex-shrink-0 w-full lg:w-[528px]"
               style={{
-                width: "528px",
                 padding: "56px 24px",
-                flexDirection: "column",
                 display: "flex",
+                flexDirection: "column",
                 alignItems: "flex-start",
                 gap: "40px",
                 borderRadius: "10px",
                 background: "#0830EA",
               }}
             >
-              <div className="border border-gray-700 rounded inline-flex items-center gap-2 py-1 px-3">
-                <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
-                <span className="text-gray-400 text-sm">{card.step}</span>
-              </div>
-              <h4 className="text-3xl font-semibold leading-snug">{card.title}</h4>
-              <p className="text-gray-400 text-base">{card.text}</p>
+              <h4 className="text-3xl lg:text-4xl font-[OpenSauceSans] text-white leading-snug">
+                {card.title}
+              </h4>
+              <p className="text-white text-base lg:text-lg">{card.text}</p>
             </div>
           ))}
         </div>
